@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navbar</title>
+  <link rel="stylesheet" href="gbk.css">
+</head>
+<body>
+  <nav>
+    <input type="checkbox" id="sidebar-active">
+    <label for="sidebar-active" class="open-sidebar-button">
+      <svg xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 -960 960 960" width="32"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
+    </label>
+    <label id="overlay" for="sidebar-active"></label>
+    <div class="links-container">
+      <label for="sidebar-active" class="close-sidebar-button">
+        <svg xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 -960 960 960" width="32"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
+      </label>
+
+      <a class="home-link" href="index.html">Home</a> 
+      <a href="about.html">About</a> 
+      <a href="products.html">Products</a>
+      <a href="blog.html">Blog</a>
+      <a href="login.html">Login</a>
+      
+    </div>
+  </nav>
+
+  <h1>Homepage</h1>
+</body>
+</html>
+
+
+
+
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+:root{
+  --color-1: #0f1016;
+  --text-color: #f0f0f0;
+  --accent-color: #006aff;
+}
+*{
+  margin: 0;
+  padding: 0;
+}
+html{
+  font-size: 12pt;
+  font-family: Poppins, Segoe UI, Tahoma, sans-serif;
+}
+nav{
+  height: 60px;
+  background-color: var(--color-1);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.links-container{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+nav a{
+  height: 100%;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--text-color);
+}
+nav a:hover{
+  background-color: var(--accent-color);
+}
+nav .home-link{
+  margin-right: auto;
+} 
+nav svg{
+  fill: var(--text-color);
+}
+#sidebar-active{
+  display: none;
+}
+.open-sidebar-button, .close-sidebar-button{
+  display: none;
+}
+@media(max-width: 667px){
+  .links-container{
+    flex-direction: column;
+    align-items: flex-start;
+
+    position: fixed;
+    top: 0;
+    right: -100%;
+    z-index: 10;
+    width: 300px;
+
+    background-color: var(--color-1);
+    box-shadow: -5px 0 5px rgba(0, 0, 0, 0.25);
+    transition: 0.75s ease-out;
+  }
+  nav a{
+    box-sizing: border-box;
+    height: auto;
+    width: 100%;
+    padding: 20px 30px;
+    justify-content: flex-start;
+  }
+  .open-sidebar-button, .close-sidebar-button{
+    padding: 20px;
+    display: block;
+  }
+  #sidebar-active:checked ~ .links-container{
+    right: 0;
+  }
+  #sidebar-active:checked ~ #overlay{
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9;
+  }
+}
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cards</title>
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+    <div class="container">
+        <div class="wrapper">
+            <input class="radio" type="radio" name="card" id="cardUno" checked />
+            <label class="content" for="cardUno">
+                <h1 class="title-card">
+                    <span class="marg-bott">EXAMPLE TITLE OF MY CARD</span>
+                    <span class="subtitle">EXAMPLE SOME SUBTILTE OR HEADER</span>
+                </h1>
+                <h3 class="card-title subsubtitle">
+                    <span>EXAMPLE SOME 1</span>
+                </h3>
+            </label>
+    
+            <input class="radio" type="radio" name="card" id="cardDos" />
+            <label class="content" for="cardDos">
+                <h1 class="title-card">
+                    <span class="marg-bott">TITLE</span>
+                    <span class="subtitle">SUBTILTE </span>
+                </h1>
+                <h3 class="card-title subsubtitle">
+                    <span>EXAMPLE2</span>
+                </h3>
+            </label>
+    
+            <input class="radio" type="radio" name="card" id="cardTres" />
+            <label class="content" for="cardTres">
+                <h1 class="title-card">
+                    <span class="marg-bott">TITLE</span>
+                    <span class="subtitle">SUBTILTE OR HEADER</span>
+                </h1>
+                <h3 class="card-title subsubtitle">
+                    <span>EXAMPLE3</span>
+                </h3>
+            </label>
+    
+            <input class="radio" type="radio" name="card" id="cardCuatro" />
+            <label class="content" for="cardCuatro">
+                <h1 class="title-card">
+                    <span class="marg-bott">TITLE </span>
+                    <span class="subtitle">SUBTILTE</span>
+                </h1>
+                <h3 class="card-title subsubtitle">
+                    <span>EXAMPLE 4</span>
+                </h3>
+            </label>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: #080808;
+}
+
+.container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper {
+    display: flex;
+    height: 21rem;
+    margin: 0 auto;
+    max-width: 55vw;
+    width: 55vw;
+}
+
+.radio {
+    display: none;
+}
+
+.content {
+    position: relative;
+    flex: 1;
+    cursor: pointer;
+    border-radius: 3rem;
+    margin-right: 0.8rem;
+    overflow: hidden;
+    background: transparent;
+    background-image: url("");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: all 0.5s cubic-bezier(0.05, 0.60, 0.39, 0.94);
+}
+
+.content::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    background: inherit;
+}
+
+.content > * {
+    position: relative;
+    z-index: 1;
+}
+
+.content:hover {
+    box-shadow: 0.7rem 0.7rem 0.5rem rgba(0, 0, 0, 0.3);
+}
+
+.content:nth-of-type(2) {
+    background: transparent;
+    background-image: url("");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.content:nth-of-type(3) {
+    background: transparent;
+    background-image: url("");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.content:nth-of-type(4) {
+    background: transparent;
+    background-image: url("");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.card-title {
+    position: absolute;
+    bottom: 1.2rem;
+    left: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    color: #000;
+    font-size: 1.2rem;
+    line-height: 1.1;
+    opacity: 0;
+    user-select: none;
+    white-space: nowrap;
+    transform: translateX(2rem);
+    transition: 290ms cubic-bezier(0.05, 0.62, 0.40, 0.95) 300ms;
+    transition-property: opacity, transform;
+}
+
+.title-card {
+    position: absolute;
+    top: 2rem;
+    left: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    color: #000;
+    font-size: 1.2rem;
+    line-height: 1.1;
+    opacity: 0;
+    user-select: none;
+    white-space: nowrap;
+    transform: translateX(2rem);
+    transition: 290ms cubic-bezier(0.05, 0.60, 0.42, 0.94) 300ms;
+    transition-property: opacity, transform;
+
+}
+
+.subtitle {
+    font-size: 1rem;
+}
+
+.subsubtitle {
+    font-size: 0.85rem;
+}
+
+.paddT {
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+
+.radio:checked + .content {
+    flex: 9;
+    border-radius: 2rem;
+    box-shadow: 0.3rem 0.3rem 0.4rem rgba(0, 0, 0, 0.3);
+}
+
+.radio:checked + .content > .card-title {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.radio:checked+.content>.title-card {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.marg-bott {
+    margin-bottom: 1.5rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="login.css"/>
+</head>
+<body>
+
+<div class="wrap">
+    <form action="">
+        <h1>Login</h1>
+
+        <div class="input1">
+            <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                <input type="email" placeholder="Username" required>   
+        </div>
+
+        <div class="input1">
+            <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                <input type="password" placeholder="password" required>
+        </div>
+<!-- 
+        <div>
+            <label><input type="checkbox">Remember me</label>
+            <a href="#">Forgot Password</a>
+        </div> -->
+        <a href="2.html">
+        <button type="submit"class="btn">
+        Login</button>
+    </a>
+      
+
+        <!-- <div>
+            <p>Don't have an account? <a href="#">Sign up</a></p
+        </div> -->
+
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+
+    </form>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Poppins',sans-serif;
+    box-sizing: border-box; 
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url("https://img.freepik.com/free-photo/young-wheat-green-field_1268-29148.jpg?size=626&ext=jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+} 
+.wrap{
+    position: relative;
+    width: 400px;
+    height: 450px;
+    background:transparent;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: aqua; */
+} 
+
+.wrap h1{
+    color: white;
+    text-align: center;
+}
+.input1{
+width: 100%;
+margin: 30px 0;
+background-color:transparent;
+position: relative;
+}
+.wrap input1{
+    width: 100%;
+    height: 50px;
+    /* background: transparent; */
+    margin: 30px 0;
+    position: relative;
+
+}
+.input1 input{
+    width: 100%;
+    height: 100%;
+    padding: 20px 45px 20px 20px;
+    border:2px solid rgba(255,255,255,.2);
+    border-radius: 40px;
+    font-size: 16px;
+    background: transparent;
+    /* border: none; */
+    /* outline: none; */
+}
+.input1 input::placeholder{
+    color: white;
+}
+.input1 span{
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;  
+    color: aliceblue;
+}
+.btn{
+    width: 100%;
+    height: 40px;
+    background: white;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 40px;
+    box-shadow: 0 0 10px black;
+    font-weight: 600px;
+
+}
+
+
